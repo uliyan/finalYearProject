@@ -24,11 +24,10 @@ import { AdminUsersComponent } from './auth/components/admin/admin-users/admin-u
 
 //Club components
 import { ClubComponent } from './auth/components/club/club.component';
+import { ClubMeetsComponent } from './auth/components/club/club-meets/club-meets.component';
 
 //wildcard
 import {WildCardComponent} from './wild-card/wild-card.component';
-
-
 
 const routes: Routes = [
   {path: '', redirectTo: '/public', pathMatch: 'full'},
@@ -64,11 +63,11 @@ const routes: Routes = [
     path: 'club', component: ClubComponent,
     children:[
       {path: 'reset', component: ResetPasswordComponent},
-      {path: 'meets', component: AdminMeetsComponent},
+      {path: 'meets', component: ClubMeetsComponent},
       {path: 'reports', component: AdminReportsComponent,
       children:[
         {path: 'help', component: HelpComponent}
-      ]}      
+      ]}
     ]
   },
   {path: "**", component: WildCardComponent}
