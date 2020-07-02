@@ -16,15 +16,15 @@ import { ResetPasswordComponent } from './auth/components/reset-password/reset-p
 import { AdminComponent } from './auth/components/admin/admin.component';
 import { AdminUploadComponent } from './auth/components/admin/admin-upload/admin-upload.component';
 import { AdminMeetsComponent } from './auth/components/admin/admin-meets/admin-meets.component';
-//Admin reports components
-import { AdminReportsComponent } from './auth/components/admin/admin-reports/admin-reports.component';
-import { HelpComponent } from './auth/components/admin/admin-reports/help/help.component';
 //Admin user-mgmt components
 import { AdminUsersComponent } from './auth/components/admin/admin-users/admin-users.component';
 
 //Club components
 import { ClubComponent } from './auth/components/club/club.component';
 import { ClubMeetsComponent } from './auth/components/club/club-meets/club-meets.component';
+
+//Reports components
+import { AdminReportsComponent } from './auth/components/admin/admin-reports/admin-reports.component';
 
 //wildcard
 import {WildCardComponent} from './wild-card/wild-card.component';
@@ -52,10 +52,7 @@ const routes: Routes = [
       {path: 'reset', component: ResetPasswordComponent},
       {path: 'uploads', component: AdminUploadComponent},
       {path: 'meets', component: AdminMeetsComponent},
-      {path: 'reports', component: AdminReportsComponent,
-      children:[
-        {path: 'help', component: HelpComponent}
-      ]},
+      {path: 'reports', component: AdminReportsComponent},
       {path: 'users', component: AdminUsersComponent}     
     ]
   },
@@ -64,10 +61,7 @@ const routes: Routes = [
     children:[
       {path: 'reset', component: ResetPasswordComponent},
       {path: 'meets', component: ClubMeetsComponent},
-      {path: 'reports', component: AdminReportsComponent,
-      children:[
-        {path: 'help', component: HelpComponent}
-      ]}
+      {path: 'reports', component: AdminReportsComponent}
     ]
   },
   {path: "**", component: WildCardComponent}
